@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AplicatieMobila.ViewModels"
+             x:Class="AplicatieMobila.AboutPage"
+             Title="Lista Flori">
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <Label Text="Flori disponibile" FontSize="24" HorizontalOptions="Center" />
+        <CollectionView ItemsSource="{Binding Flowers}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Image Source="{Binding ImageUrl}" WidthRequest="50" HeightRequest="50" Margin="0,0,10,0" />
+
+                        <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" />
+                        <Label Text="{Binding Price, StringFormat='{}{0:C}'}" FontSize="18" VerticalOptions="Center" Margin="10,0" />
+                        <Button Text="Adaugă în coș" Command="{Binding BindingContext.AddToCartCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding}" />
+
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Vezi cosul" Clicked="OnViewCartClicked" />
+
+    </StackLayout>
+</ContentPage>

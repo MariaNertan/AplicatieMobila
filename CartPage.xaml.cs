@@ -24,18 +24,18 @@ namespace AplicatieMobila
         // Func?ie pentru a confirma comanda
         private async void OnConfirmOrder(object sender, EventArgs e)
         {
-            string deliveryMethod = PickupOptionPicker.SelectedItem.ToString();
-            DateTime? deliveryDate = DeliveryDatePicker.Date;
-            TimeSpan? deliveryTime = DeliveryTimePicker.Time;
+             string deliveryMethod = PickupOptionPicker.SelectedItem.ToString();
+    DateTime? deliveryDate = DeliveryDatePicker.Date;
+    TimeSpan? deliveryTime = DeliveryTimePicker.Time;
 
-            // Verific?m dac? toate câmpurile sunt completate
-            if (deliveryDate.HasValue && deliveryTime.HasValue)
-            {
-                // Confirm?m detaliile comenzii
-                await DisplayAlert("Confirmare comand?", $"Metoda de livrare: {deliveryMethod}\n" +
-                                                        $"Data: {deliveryDate.Value.ToShortDateString()}\n" +
-                                                        $"Ora: {deliveryTime.Value.ToString(@"hh\:mm")}", "OK");
-            }
+    // Verific?m dac? toate câmpurile sunt completate
+    if (deliveryDate.HasValue && deliveryTime.HasValue)
+    {
+        // Confirm?m detaliile comenzii
+        await DisplayAlert("Confirmare comand?", $"Metoda de livrare: {deliveryMethod}\n" +
+                                                $"Data: {deliveryDate.Value.ToShortDateString()}\n" +
+                                                $"Ora: {deliveryTime.Value.ToString(@"hh\:mm")}", "OK");
+    }
             else
             {
                 // Afi?eaz? mesaj dac? informa?iile nu sunt complete

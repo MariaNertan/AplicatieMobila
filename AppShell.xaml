@@ -8,9 +8,11 @@
     <TabBar>
         <!-- Tab-ul pentru Produse -->
         <ShellContent Title="Produse" ContentTemplate="{DataTemplate local:AboutPage}" />
-
+        <ShellContent Title="Buchete" ContentTemplate="{DataTemplate local:BouquetsPage}" Route="bouquets" />
         <!-- Tab-ul pentru Cosul de cumparaturi -->
         <ShellContent Title="Cosul meu" ContentTemplate="{DataTemplate local:CartPage}" />
+        
+
     </TabBar>
 
 </Shell>

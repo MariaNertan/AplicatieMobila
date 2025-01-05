@@ -16,4 +16,13 @@ public partial class AboutPage : ContentPage
         // Navigheaz? c?tre pagina CartPage
         await Navigation.PushAsync(new CartPage());
     }
+    private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
+    {
+        var viewModel = BindingContext as AboutViewModel;
+
+        if (viewModel != null)
+        {
+            viewModel.FilterFlowers(e.NewTextValue); // Metoda din AboutViewModel
+        }
+    }
 }

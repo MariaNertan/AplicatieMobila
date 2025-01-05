@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AplicatieMobila.ViewModels"
+             x:Class="AplicatieMobila.BouquetsPage"
+             x:Name="Page"
+             Title="Buchete Gata Făcute">
+
+
+    <ScrollView>
+        <StackLayout Padding="10">
+            <Label Text="Buchete" FontSize="24" HorizontalOptions="Center" />
+
+            <CollectionView ItemsSource="{Binding Bouquets}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" Orientation="Vertical">
+                            <Image Source="{Binding ImageUrl}" WidthRequest="190"  HeightRequest="200" Aspect="AspectFill" HorizontalOptions="Center" />
+                            <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
+                            <Label Text="{Binding Price, StringFormat='Pret: {0:C}'}" FontSize="16" />
+                            <Button Text="Adaugă în Coș" 
+                                    Command="{Binding BindingContext.AddToCartCommand, Source={x:Reference Page}}" 
+                                    CommandParameter="{Binding .}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

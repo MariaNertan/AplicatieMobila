@@ -16,7 +16,7 @@ namespace AplicatieMobila
         private void OnPickupOptionChanged(object sender, EventArgs e)
         {
             // Verific?m ce op?iune a fost selectat?
-
+                
             DeliveryDatePicker.IsVisible = true;
             DeliveryTimePicker.IsVisible = true;
 

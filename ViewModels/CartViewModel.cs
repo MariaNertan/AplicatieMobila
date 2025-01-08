@@ -23,6 +23,22 @@ public class CartViewModel : BaseViewModel
         }
     }
 
+    // Metodă pentru a actualiza cantitatea unui produs
+        public void UpdateCartItemQuantity(CartItem item, int newQuantity)
+    {
+        if (item == null || newQuantity < 0) return;
+
+        // Actualizează cantitatea produsului
+        item.Quantity = newQuantity;
+
+        // Recalculează prețul total pentru produs
+        item.TotalPrice = item.Price * newQuantity;
+
+        // Notifică despre modificările proprietăților
+        OnPropertyChanged(nameof(TotalAmount)); // Actualizează suma totală a coșului
+        OnPropertyChanged(nameof(CartItems)); // Actualizează lista produselor
+    }
+
     // Declarațiile pentru comenzi
     public ICommand UpdateQuantityCommand { get; }
     public ICommand RemoveFromCartCommand { get; }

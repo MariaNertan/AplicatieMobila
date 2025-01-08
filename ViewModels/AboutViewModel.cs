@@ -25,7 +25,17 @@ public class AboutViewModel : BaseViewModel
         {
             new Flower { Name = "Trandafir", Price = 10, ImageUrl = "trandafir.png" },
             new Flower { Name = "Lalea", Price = 7, ImageUrl = "lalea.png" },
-            new Flower { Name = "Crin", Price = 12, ImageUrl = "crin.png" }
+            new Flower { Name = "Crin", Price = 12, ImageUrl = "crin.png" },
+            new Flower { Name = "Margareta", Price = 8, ImageUrl = "margareta.png" },
+            new Flower { Name = "Bujor", Price = 9, ImageUrl = "bujor.png" },
+            new Flower { Name = "Zambila", Price = 6, ImageUrl = "zambila.png" },
+            new Flower { Name = "Orhidee", Price = 15, ImageUrl = "orhidee.png" },
+            new Flower { Name = "Lavanda", Price = 18, ImageUrl = "lavanda.png" },
+            new Flower { Name = "Hortensie", Price = 22, ImageUrl = "hortensie.png" },
+            new Flower { Name = "Floarea Soarelui", Price = 12, ImageUrl = "floarea_soarelui.png" }
+
+
+
         };
 
         // Inițial, lista filtrată este identică cu lista completă

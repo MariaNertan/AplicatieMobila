@@ -22,7 +22,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10" Orientation="Vertical">
-                        <Image Source="{Binding ImageUrl}" WidthRequest="150" HeightRequest="180"  Aspect="AspectFill" HorizontalOptions="Center" />
+                        <Image Source="{Binding ImageUrl}" WidthRequest="180" HeightRequest="180"  Aspect="AspectFill" HorizontalOptions="Center" />
 
                         <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
                         <Label Text="{Binding Price, StringFormat='{}{0:C}'}" FontSize="16" />
